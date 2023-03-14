@@ -34,7 +34,8 @@
 
                     <!-- creo un ciclo per stampare dinamicamente tramite vue le thumbs-->
                     <!-- se l'indice creato corrisponde al currentIndex aggiungo la classe "active" alla thumb altrimenti non aggiungo nessuna classe-->
-                    <div v-for="(elemento, indice) in slides" :class="indice == currentIndex ? 'active' : ' ' "  class="thumb" >
+                    <!-- al click su una thumb visualizzo l'oggetto corrispondente-->
+                    <div v-for="(elemento, indice) in slides" :class="currentIndex == indice  ? 'active' : ' ' "  class="thumb" @click="currentIndex = indice">
                         <img :src="slides[indice].image" alt=""/>
                     </div>
 
