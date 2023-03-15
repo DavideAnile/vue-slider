@@ -57,8 +57,15 @@ const { createApp } = Vue
             
           
 
-        currentIndex : 0,    
+        currentIndex : 0, 
+        timer : null,   
       }
+    },
+
+
+    mounted(){
+
+      this.startTimer()
     },
     
     methods : {
@@ -90,9 +97,43 @@ const { createApp } = Vue
 
         },
 
-       
+        startTimer (){
+
+          this.timer = setInterval(this.nextSlide, 2000)
+        },
+
+
+        stopTimer (){
+
+          clearInterval(this.timer)
+        }
     }
 
   }).mount('#app')
 
   
+
+
+  /* 
+  
+BONUS 2 
+
+
+  Mounted (){                                                     NON E' U methods : , (MOUNTED) è una funzione che parte appena la pagina viene renderizzata
+  console.log("pagina montata")
+  setInterval () => {
+
+    this.nextSlide()
+
+  }, 3000
+  }
+  
+  */
+
+
+
+/* 
+
+BONUS 3 
+
+*/
